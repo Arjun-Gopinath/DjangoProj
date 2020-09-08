@@ -6,6 +6,45 @@
     <title>Grocery List</title>
 </head>
 <body>
-    <h2>Here's your Grocery List</h2>
+    <div class="container">
+        <h2>Grocery List</h2>
+        <table style="width:50%">
+            <tr>
+              <th>Name</th>
+              <th>Price/kg</th>
+              <th>Total Price</th>
+              <th>Buy Date</th>
+            </tr>
+            {% for groc in groclist %}
+            <tr>
+                <td>{{groc.name}}</td>
+                <td>{{groc.price}}</td>
+                <td></td>
+                <td>{{groc.buy_date}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </div>
+    
 </body>
+<style>
+    body{
+        margin:0px;
+        padding:0px;
+    }
+    .container{
+        display:flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    table{
+        border: 1px solid black;
+        padding:10px;
+    }
+    tr{
+        text-align: center;
+    }
+</style>
 </html>
